@@ -11,7 +11,9 @@ model User {
   name      String
   email     String        @unique
   password  String
+
   ideas     StartupIdea[]
+
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
 }
@@ -22,10 +24,32 @@ model StartupIdea {
   problem     String
   solution    String
   targetUsers String
-  userId      String
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  report      ValidationReport?
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model ValidationReport {
+  id               String @id @default(cuid())
+
+  score            Int
+  marketDemand     String
+  competitionLevel String
+  revenuePotential String
+  riskLevel        String
+  risks            Json
+  mvpFeatures      Json
+  recommendation   String
+  rawReport        String?
+
+  startupIdeaId    String @unique
+  startupIdea      StartupIdea @relation(fields: [startupIdeaId], references: [id], onDelete: Cascade)
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }
