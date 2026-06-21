@@ -278,29 +278,6 @@ npm run lint
 
 ---
 
-## 🚢 Deployment
-
-### Deploy on Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
-
-### Deploy on Other Platforms
-The application can be deployed on any platform that supports Node.js:
-- AWS
-- Heroku
-- Railway
-- Render
-- DigitalOcean
-
-Ensure you:
-1. Set environment variables in your deployment platform
-2. Run database migrations: `npx prisma migrate deploy`
-3. Build the project: `npm run build`
-
----
-
 ## 🐛 Troubleshooting
 
 ### Database Connection Issues
@@ -335,18 +312,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 📧 Support
-
-For support, email support@startupsignal.com or create an issue on GitHub.
-
----
-
 ## 🙏 Acknowledgments
 
 - [Next.js](https://nextjs.org) - React framework
@@ -370,6 +335,3 @@ For support, email support@startupsignal.com or create an issue on GitHub.
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [OpenAI API Reference](https://platform.openai.com/docs/api-reference)
 
----
-
-**Built with ❤️ by the StartupSignal Team**
